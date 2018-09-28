@@ -59,5 +59,5 @@ plt_333 = ax.errorbar(testx,y_333_a,yerr = [low_err_333, high_err_333], fmt=  '-
 
 plt.legend([plt_298, plt_303, plt_308, plt_318, plt_323, plt_328, plt_333],
            ['298 K', '303 K', '308 K', '318 K', '323 K', '328 K', '333 K'])
-ax.set_title('Non-Immobilized Catalase Progress Curves')
+ax.set_title('Immobilized Catalase Progress Curves')
 plt.show()
