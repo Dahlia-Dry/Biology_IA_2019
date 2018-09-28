@@ -46,8 +46,8 @@ y_333_a = [0,2,2,2,2,2,2,2]
 y_333_b, y_333_c = gen_randobs(y_333_a)
 low_err_333, high_err_333 = gen_errbars(y_333_a, y_333_b, y_333_c)
 
-fig, axs = plt.subplots(nrows=1, ncols=1, sharex=True)
-ax = axs
+fig, axs = plt.subplots(nrows=1, ncols=2, sharex=True)
+ax = axs[0]
 plt_298 = ax.errorbar(testx,y_298_a,yerr = [low_err_298, high_err_298], fmt=  '--o', color = 'red')
 plt_303 = ax.errorbar(testx,y_303_a,yerr = [low_err_303, high_err_303], fmt=  '--o', color = 'orange')
 plt_308 = ax.errorbar(testx,y_308_a,yerr = [low_err_308, high_err_308], fmt=  '--o', color = 'yellow')
@@ -55,9 +55,20 @@ plt_318 = ax.errorbar(testx,y_318_a,yerr = [low_err_318, high_err_318], fmt=  '-
 plt_323 = ax.errorbar(testx,y_323_a,yerr = [low_err_323, high_err_323], fmt=  '--o', color = 'blue')
 plt_328 = ax.errorbar(testx,y_328_a,yerr = [low_err_328, high_err_328], fmt=  '--o', color = 'purple')
 plt_333 = ax.errorbar(testx,y_333_a,yerr = [low_err_333, high_err_333], fmt=  '--o', color = 'pink')
+plt.legend([plt_298, plt_303, plt_308, plt_318, plt_323, plt_328, plt_333],
+           ['298 K', '303 K', '308 K', '318 K', '323 K', '328 K', '333 K'])
+ax.set_title('Non-Immobilized Catalase Progress Curves')
 
-
+ax = axs[1]
+plt_298 = ax.errorbar(testx,y_298_a,yerr = [low_err_298, high_err_298], fmt=  '--o', color = 'red')
+plt_303 = ax.errorbar(testx,y_303_a,yerr = [low_err_303, high_err_303], fmt=  '--o', color = 'orange')
+plt_308 = ax.errorbar(testx,y_308_a,yerr = [low_err_308, high_err_308], fmt=  '--o', color = 'yellow')
+plt_318 = ax.errorbar(testx,y_318_a,yerr = [low_err_318, high_err_318], fmt=  '--o', color = 'green')
+plt_323 = ax.errorbar(testx,y_323_a,yerr = [low_err_323, high_err_323], fmt=  '--o', color = 'blue')
+plt_328 = ax.errorbar(testx,y_328_a,yerr = [low_err_328, high_err_328], fmt=  '--o', color = 'purple')
+plt_333 = ax.errorbar(testx,y_333_a,yerr = [low_err_333, high_err_333], fmt=  '--o', color = 'pink')
 plt.legend([plt_298, plt_303, plt_308, plt_318, plt_323, plt_328, plt_333],
            ['298 K', '303 K', '308 K', '318 K', '323 K', '328 K', '333 K'])
 ax.set_title('Immobilized Catalase Progress Curves')
+
 plt.show()
